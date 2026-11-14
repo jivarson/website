@@ -84,15 +84,6 @@ h2 span { color: var(--neon); }
 .p { color: var(--pink); }
 .g { color: var(--neon); }
 
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.25rem; }
-.card {
-  background: var(--panel); border: 1px solid rgba(0,255,156,.25); border-radius: 10px;
-  padding: 1.75rem 1.25rem; backdrop-filter: blur(6px);
-}
-.card:hover { box-shadow: 0 0 35px rgba(0,255,156,.25); border-color: var(--neon); }
-.card .icon { font-size: 2.2rem; color: var(--neon); text-shadow: 0 0 12px var(--neon); transform: translateZ(50px); }
-.card h3 { color: #fff; margin: .8rem 0 .5rem; font-size: 1.05rem; transform: translateZ(35px); }
-.card p { color: var(--muted); font-size: .85rem; line-height: 1.5; transform: translateZ(20px); }
 
 .contact {
   text-align: center; padding: 3rem 1.5rem; background: var(--panel);
