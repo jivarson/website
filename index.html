@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jivarson // root@bio</title>
+<meta name="description" content="Personal bio of jivarson — cybersecurity, code and curiosity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="scanlines"></div>
+
+<nav>
+  <span class="logo">&gt;_ jivarson</span>
+  <div class="links">
+    <a href="#about">about</a>
+    <a href="#skills">skills</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+
+<main>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <p class="tag">[ SYSTEM ACCESS GRANTED ]</p>
+    <h1 class="glitch" data-text="JIVARSON">JIVARSON</h1>
+    <p class="typed"><span id="typed"></span><span class="cursor">█</span></p>
+    <a href="#about" class="btn">./enter --bio</a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <h2><span>01.</span> whoami</h2>
+    <div class="terminal tilt">
+      <div class="term-bar"><i></i><i></i><i></i><span>bash — ~/bio</span></div>
+      <pre class="term-body"><span class="p">$</span> cat about.txt
+<!-- EDIT ME: replace the text below with your own bio -->
+Hey, I'm jivarson — a security enthusiast who likes to
+take systems apart to understand how they really work.
+
+I spend my time exploring networks, breaking (and fixing)
+web apps, tinkering with Linux, and solving CTF challenges.
+Curious by default. Paranoid by design.
+
+<span class="p">$</span> echo $STATUS
+<span class="g">● online — always learning</span></pre>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <h2><span>02.</span> arsenal</h2>
+    <div class="cards">
+      <div class="card tilt"><div class="icon">⛨</div><h3>Network Security</h3><p>Packet analysis, firewalls, recon and hardening.</p></div>
+      <div class="card tilt"><div class="icon">⌬</div><h3>Web Exploitation</h3><p>OWASP Top 10, XSS, SQLi and secure coding.</p></div>
+      <div class="card tilt"><div class="icon">❖</div><h3>Linux &amp; Scripting</h3><p>Bash, Python and living in the terminal.</p></div>
+      <div class="card tilt"><div class="icon">⚑</div><h3>CTF Player</h3><p>Crypto, forensics, pwn — capture all the flags.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2><span>03.</span> establish_connection</h2>
+    <div class="contact tilt">
+      <p>Encrypted channels open. Ping me:</p>
+      <a class="btn" href="https://github.com/jivarson" target="_blank" rel="noopener">github.com/jivarson</a>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; <span id="year"></span> jivarson · all packets reserved</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
