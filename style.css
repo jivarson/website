@@ -1,11 +1,11 @@
 :root {
-  --bg: #05070d;
-  --neon: #00ff9c;
-  --cyan: #00e5ff;
-  --pink: #ff2bd6;
-  --text: #c8d3e0;
-  --muted: #6b7a90;
-  --panel: rgba(10, 18, 30, 0.72);
+  --bg: #000000;
+  --neon: #00ff41;      /* Matrix green */
+  --bright: #9dffb0;    /* highlight / links */
+  --prompt: #39ff14;    /* shell prompt */
+  --text: #00d936;
+  --muted: #0a7a2a;
+  --panel: rgba(0, 10, 2, 0.8);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,6 +13,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
+  text-shadow: 0 0 4px rgba(0,255,65,.35);
   font-family: "JetBrains Mono", monospace;
   overflow-x: hidden;
 }
@@ -31,21 +32,21 @@ section { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: 
 .tilt { transform-style: preserve-3d; transition: transform .15s ease-out, box-shadow .3s; will-change: transform; }
 
 .terminal {
-  background: var(--panel); border: 1px solid rgba(0,229,255,.3); border-radius: 10px;
-  backdrop-filter: blur(6px); box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 30px rgba(0,229,255,.1);
+  background: var(--panel); border: 1px solid rgba(0,255,65,.4); border-radius: 10px;
+  backdrop-filter: blur(6px); box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 30px rgba(0,255,65,.15);
 }
-.term-bar { display: flex; align-items: center; gap: .45rem; padding: .65rem .9rem; border-bottom: 1px solid rgba(0,229,255,.2); }
-.term-bar i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
-.term-bar i:nth-child(2) { background: #febc2e; }
-.term-bar i:nth-child(3) { background: #28c840; }
+.term-bar { display: flex; align-items: center; gap: .45rem; padding: .65rem .9rem; border-bottom: 1px solid rgba(0,255,65,.25); }
+.term-bar i { width: 12px; height: 12px; border-radius: 50%; background: #003b0f; border: 1px solid var(--neon); }
+.term-bar i:nth-child(2) { background: #007a1f; }
+.term-bar i:nth-child(3) { background: var(--neon); }
 .term-bar span { margin-left: auto; color: var(--muted); font-size: .8rem; }
 .term-body { padding: 1.5rem; white-space: pre-wrap; line-height: 1.7; font-family: inherit; font-size: .95rem; transform: translateZ(30px); }
-.p { color: var(--pink); }
+.p { color: var(--prompt); }
 .g { color: var(--neon); }
 
 
-.term-body a { color: var(--cyan); text-decoration: none; }
-.term-body a:hover { text-shadow: 0 0 8px var(--cyan); }
+.term-body a { color: var(--bright); text-decoration: none; }
+.term-body a:hover { text-shadow: 0 0 8px var(--neon), 0 0 16px var(--neon); }
 
 /* ---------- animations ---------- */
 
