@@ -23,50 +23,9 @@ body {
   background: repeating-linear-gradient(0deg, rgba(0,0,0,.25) 0 1px, transparent 1px 3px);
 }
 
-/* ---------- nav ---------- */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 10;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(rgba(5,7,13,.9), transparent);
-}
-.logo { color: var(--neon); font-weight: 800; text-shadow: 0 0 8px var(--neon); }
-.links a { color: var(--text); text-decoration: none; margin-left: 1.25rem; font-size: .9rem; }
-.links a:hover { color: var(--cyan); text-shadow: 0 0 8px var(--cyan); }
-
 /* ---------- layout ---------- */
 main { max-width: 980px; margin: 0 auto; padding: 0 1rem; }
-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 6rem 0; }
-h2 { font-family: "Orbitron", sans-serif; font-size: clamp(1.4rem, 4vw, 2.2rem); margin-bottom: 2rem; color: #fff; }
-h2 span { color: var(--neon); }
-
-/* ---------- hero ---------- */
-.hero { align-items: center; text-align: center; perspective: 800px; }
-.tag { color: var(--neon); letter-spacing: .3em; font-size: .8rem; margin-bottom: 1rem; animation: blink 2s infinite; }
-.glitch {
-  position: relative;
-  font-family: "Orbitron", sans-serif; font-weight: 900;
-  font-size: clamp(3rem, 13vw, 8rem);
-  color: #fff;
-  text-shadow: 0 0 20px rgba(0,255,156,.6), 0 0 60px rgba(0,229,255,.3);
-  transform: rotateX(18deg);
-  animation: float 6s ease-in-out infinite;
-}
-.glitch::before, .glitch::after {
-  content: attr(data-text); position: absolute; inset: 0; overflow: hidden;
-}
-.glitch::before { color: var(--pink); left: 3px; animation: glitch1 2.5s infinite linear alternate-reverse; }
-.glitch::after  { color: var(--cyan); left: -3px; animation: glitch2 3s infinite linear alternate-reverse; }
-.typed { margin: 1.5rem 0 2.5rem; font-size: clamp(.95rem, 2.5vw, 1.2rem); color: var(--cyan); min-height: 1.5em; }
-.cursor { animation: blink 1s steps(1) infinite; color: var(--neon); }
-
-.btn {
-  display: inline-block; padding: .8rem 1.6rem;
-  color: var(--neon); border: 1px solid var(--neon); text-decoration: none;
-  box-shadow: 0 0 12px rgba(0,255,156,.3), inset 0 0 12px rgba(0,255,156,.15);
-  transition: .25s;
-}
-.btn:hover { background: var(--neon); color: var(--bg); box-shadow: 0 0 30px var(--neon); }
+section { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 2rem 0; }
 
 /* ---------- 3D tilt panels ---------- */
 .tilt { transform-style: preserve-3d; transition: transform .15s ease-out, box-shadow .3s; will-change: transform; }
@@ -85,38 +44,14 @@ h2 span { color: var(--neon); }
 .g { color: var(--neon); }
 
 
-.contact {
-  text-align: center; padding: 3rem 1.5rem; background: var(--panel);
-  border: 1px solid rgba(255,43,214,.3); border-radius: 10px; backdrop-filter: blur(6px);
-}
-.contact p { margin-bottom: 1.5rem; }
-.contact .btn { transform: translateZ(40px); }
-
-footer { text-align: center; padding: 2rem; color: var(--muted); font-size: .8rem; }
-
-/* ---------- reveal on scroll ---------- */
-.reveal { opacity: 0; transform: translateY(40px); transition: opacity .8s, transform .8s; }
-.reveal.visible { opacity: 1; transform: none; }
+.term-body a { color: var(--cyan); text-decoration: none; }
+.term-body a:hover { text-shadow: 0 0 8px var(--cyan); }
 
 /* ---------- animations ---------- */
-@keyframes blink { 50% { opacity: 0; } }
-@keyframes float { 0%,100% { transform: rotateX(18deg) translateY(0); } 50% { transform: rotateX(8deg) translateY(-12px); } }
-@keyframes glitch1 {
-  0% { clip-path: inset(10% 0 80% 0); } 20% { clip-path: inset(50% 0 20% 0); }
-  40% { clip-path: inset(80% 0 5% 0); } 60% { clip-path: inset(30% 0 60% 0); }
-  80% { clip-path: inset(5% 0 90% 0); } 100% { clip-path: inset(65% 0 10% 0); }
-}
-@keyframes glitch2 {
-  0% { clip-path: inset(70% 0 10% 0); } 25% { clip-path: inset(20% 0 70% 0); }
-  50% { clip-path: inset(90% 0 2% 0); } 75% { clip-path: inset(40% 0 40% 0); }
-  100% { clip-path: inset(15% 0 75% 0); }
-}
 
 @media (max-width: 560px) {
-  .links a { margin-left: .75rem; font-size: .8rem; }
   .term-body { font-size: .8rem; padding: 1rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
-.tilt.reveal.visible { transition: transform .15s ease-out, box-shadow .3s, opacity .8s; }
