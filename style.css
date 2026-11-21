@@ -5,7 +5,7 @@
   --prompt: #39ff14;    /* shell prompt */
   --text: #00d936;
   --muted: #0a7a2a;
-  --panel: rgba(0, 10, 2, 0.8);
+  --panel: rgba(0, 8, 2, 0.88);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,7 +18,7 @@ body {
   overflow-x: hidden;
 }
 
-#bg { position: fixed; inset: 0; z-index: -2; }
+#bg { position: fixed; inset: 0; width: 100%; height: 100%; display: block; z-index: -2; }
 .scanlines {
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background: repeating-linear-gradient(0deg, rgba(0,0,0,.25) 0 1px, transparent 1px 3px);
@@ -33,7 +33,7 @@ section { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: 
 
 .terminal {
   background: var(--panel); border: 1px solid rgba(0,255,65,.4); border-radius: 10px;
-  backdrop-filter: blur(6px); box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 30px rgba(0,255,65,.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 30px rgba(0,255,65,.15);
 }
 .term-bar { display: flex; align-items: center; gap: .45rem; padding: .65rem .9rem; border-bottom: 1px solid rgba(0,255,65,.25); }
 .term-bar i { width: 12px; height: 12px; border-radius: 50%; background: #003b0f; border: 1px solid var(--neon); }
