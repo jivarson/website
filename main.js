@@ -93,22 +93,6 @@
   })();
 })();
 
-// ---------- Typing effect ----------
-(function () {
-  const el = document.getElementById("typed");
-  const lines = ["cybersecurity enthusiast", "ethical hacker in training", "ctf player", "linux tinkerer", "breaking things to secure them"];
-  let li = 0, ci = 0, deleting = false;
-  (function tick() {
-    const line = lines[li];
-    el.textContent = line.slice(0, ci);
-    if (!deleting && ci < line.length) ci++;
-    else if (deleting && ci > 0) ci--;
-    else if (!deleting) { deleting = true; return setTimeout(tick, 1600); }
-    else { deleting = false; li = (li + 1) % lines.length; }
-    setTimeout(tick, deleting ? 35 : 75);
-  })();
-})();
-
 // ---------- 3D tilt on hover ----------
 document.querySelectorAll(".tilt").forEach((el) => {
   el.addEventListener("pointermove", (e) => {
@@ -119,11 +103,3 @@ document.querySelectorAll(".tilt").forEach((el) => {
   });
   el.addEventListener("pointerleave", () => (el.style.transform = ""));
 });
-
-// ---------- Reveal on scroll ----------
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((en) => en.isIntersecting && en.target.classList.add("visible"));
-}, { threshold: 0.15 });
-document.querySelectorAll("section:not(.hero) > *").forEach((el) => { el.classList.add("reveal"); io.observe(el); });
-
-document.getElementById("year").textContent = new Date().getFullYear();
