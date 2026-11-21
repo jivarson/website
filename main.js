@@ -5,7 +5,7 @@
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x05070d, 0.045);
+  scene.fog = new THREE.FogExp2(0x000000, 0.045);
   const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 200);
   camera.position.z = 14;
 
@@ -14,21 +14,21 @@
 
   // Globe: wireframe icosahedron + glowing vertex nodes
   const globeGeo = new THREE.IcosahedronGeometry(4, 2);
-  const globe = new THREE.Mesh(globeGeo, new THREE.MeshBasicMaterial({ color: 0x00ff9c, wireframe: true, transparent: true, opacity: 0.25 }));
+  const globe = new THREE.Mesh(globeGeo, new THREE.MeshBasicMaterial({ color: 0x00ff41, wireframe: true, transparent: true, opacity: 0.25 }));
   group.add(globe);
-  const nodes = new THREE.Points(globeGeo, new THREE.PointsMaterial({ color: 0x00e5ff, size: 0.12 }));
+  const nodes = new THREE.Points(globeGeo, new THREE.PointsMaterial({ color: 0x9dffb0, size: 0.12 }));
   group.add(nodes);
 
   // Inner core
   const core = new THREE.Mesh(
     new THREE.IcosahedronGeometry(1.6, 0),
-    new THREE.MeshBasicMaterial({ color: 0xff2bd6, wireframe: true, transparent: true, opacity: 0.6 })
+    new THREE.MeshBasicMaterial({ color: 0x39ff14, wireframe: true, transparent: true, opacity: 0.6 })
   );
   group.add(core);
 
   // Orbiting rings
   const rings = [];
-  [[5.5, 0x00e5ff, 1.2], [6.5, 0xff2bd6, -0.6], [7.4, 0x00ff9c, 0.4]].forEach(([r, color, tilt]) => {
+  [[5.5, 0x9dffb0, 1.2], [6.5, 0x39ff14, -0.6], [7.4, 0x00ff41, 0.4]].forEach(([r, color, tilt]) => {
     const ring = new THREE.Mesh(
       new THREE.TorusGeometry(r, 0.015, 8, 160),
       new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.5 })
@@ -45,11 +45,11 @@
   for (let i = 0; i < COUNT * 3; i++) pos[i] = (Math.random() - 0.5) * 80;
   const starGeo = new THREE.BufferGeometry();
   starGeo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-  const stars = new THREE.Points(starGeo, new THREE.PointsMaterial({ color: 0x00ff9c, size: 0.06, transparent: true, opacity: 0.7 }));
+  const stars = new THREE.Points(starGeo, new THREE.PointsMaterial({ color: 0x00ff41, size: 0.06, transparent: true, opacity: 0.7 }));
   scene.add(stars);
 
   // Grid floor
-  const grid = new THREE.GridHelper(120, 60, 0x00e5ff, 0x0a3a4a);
+  const grid = new THREE.GridHelper(120, 60, 0x9dffb0, 0x0a3a4a);
   grid.position.y = -8;
   grid.material.transparent = true;
   grid.material.opacity = 0.35;
